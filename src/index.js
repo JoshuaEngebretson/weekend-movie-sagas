@@ -8,12 +8,13 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 // Import saga middleware
 import createSagaMiddleware from 'redux-saga';
-import { takeEvery, put } from 'redux-saga/effects';
+import { takeEvery, put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
+    yield takeLatest('GET_MOVIE_DETAILS', getMovieDetails);
 }
 
 function* fetchAllMovies() {
@@ -29,6 +30,21 @@ function* fetchAllMovies() {
         
 }
 
+function* getMovieDetails(action) {
+    try {
+        const movieDetails = yield axios({
+            type: 'GET',
+            url: `/api/movie/details/${action.payload}`
+        })
+        yield put({
+            type: 'SET_MOVIE_DETAILS',
+            payload: movieDetails.data
+        })
+    } catch (error){
+        console.log('Error in getMovieDetails saga function:', error);
+    }
+}
+
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
 
@@ -36,6 +52,16 @@ const sagaMiddleware = createSagaMiddleware();
 const movies = (state = [], action) => {
     switch (action.type) {
         case 'SET_MOVIES':
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
+// Used to store details about a specific movie
+const movieDetails = (state={}, action) => {
+    switch (action.type) {
+        case 'SET_MOVIE_DETAILS':
             return action.payload;
         default:
             return state;
@@ -57,6 +83,7 @@ const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
+        movieDetails
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
