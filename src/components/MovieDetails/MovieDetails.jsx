@@ -2,10 +2,12 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom/";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import { useHistory } from 'react-router-dom/';
 
 function MovieDetails() {
 
   const dispatch = useDispatch();
+  const history = useHistory();
   
   const movie = useSelector(store => store.movieDetails[0])
   console.log('movie inside MovieDetails:', movie);
@@ -19,9 +21,14 @@ function MovieDetails() {
     })
   }, []);
 
+  const sendBackToMovieList = () => {
+    history.push('/');
+  }
+
   if (movie != undefined) {
     return (
       <>
+        <button onClick={sendBackToMovieList}>Back to List</button>
         <h1>{movie.title}</h1>
         <img src={movie.poster} alt={movie.title} />
         <p>{movie.description}</p>
@@ -35,7 +42,7 @@ function MovieDetails() {
     )
   }
   else {
-    return <h3>Error getting movie data at this time</h3>
+    return ''
   }
 }
 
