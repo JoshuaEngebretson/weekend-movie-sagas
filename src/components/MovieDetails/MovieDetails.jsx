@@ -19,20 +19,24 @@ function MovieDetails() {
     })
   }, []);
 
-
-  return (
-    <>
-      <h1>{movie.title}</h1>
-      <img src={movie.poster} alt={movie.title} />
-      <p>{movie.description}</p>
-      <h2>Associated Genres</h2>
-      <ul>
-        {movie.genres.map(genre => {
-          return <li key={genre}>{genre}</li>
-        })}
-      </ul>
-    </>
-  )
+  if (movie != undefined) {
+    return (
+      <>
+        <h1>{movie.title}</h1>
+        <img src={movie.poster} alt={movie.title} />
+        <p>{movie.description}</p>
+        <h2>Associated Genres</h2>
+        <ul>
+          {movie.genres.map(genre => {
+            return <li key={genre}>{genre}</li>
+          })}
+        </ul>
+      </>
+    )
+  }
+  else {
+    return <h3>Error getting movie data at this time</h3>
+  }
 }
 
 export default MovieDetails;
