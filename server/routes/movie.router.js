@@ -17,7 +17,6 @@ router.get('/', (req, res) => {
 });
 
 router.get('/details/:id', (req, res) => {
-
   const id = req.params.id;
 
   const sqlText = `

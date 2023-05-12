@@ -25,6 +25,8 @@ function MovieDetails() {
     history.push('/');
   }
 
+  // confirm movie is defined, then render information
+      // This ensures that there are no to less errors on loading the page
   if (movie != undefined) {
     return (
       <>
@@ -41,6 +43,7 @@ function MovieDetails() {
       </>
     )
   }
+  // if movie is not defined, don't attempt to render info based on the movie.
   else {
     return ''
   }
