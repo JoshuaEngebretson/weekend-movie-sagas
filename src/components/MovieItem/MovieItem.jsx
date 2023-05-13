@@ -1,4 +1,4 @@
-
+import './MovieItem.css';
 import { useHistory } from 'react-router-dom/';
 
 function MovieItem({movie}) {
@@ -11,7 +11,7 @@ function MovieItem({movie}) {
   }
 
   return (
-    <div key={movie.id} onClick={sendToDetails}>
+    <div key={movie.id} onClick={sendToDetails} className='movie-card'>
       <h3>{movie.title}</h3>
       <img
         src={movie.poster} 

@@ -30,7 +30,7 @@ function MovieDetails() {
   if (movie != undefined) {
     return (
       <>
-        <button onClick={sendBackToMovieList}>Back to List</button>
+        {/* <button onClick={sendBackToMovieList}>Back to List</button> */}
         <h1>{movie.title}</h1>
         <img src={movie.poster} alt={movie.title} />
         <p>{movie.description}</p>
