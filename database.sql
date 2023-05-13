@@ -47,35 +47,40 @@ VALUES
 -- starter genres
 INSERT INTO "genres" ("name")
 VALUES 
-('Adventure'),
-('Animated'),
-('Biographical'),
-('Comedy'),
-('Disaster'),
-('Drama'),
-('Epic'),
-('Fantasy'),
-('Musical'),
-('Romantic'),         --10
-('Science Fiction'),  --11
-('Space-Opera'),      --12
-('Superhero');        --13
+('Action'),           --1
+('Adventure'),        --2
+('Animated'),         --3
+('Biographical'),     --4
+('Childrens film')    --5
+('Comedy'),           --6
+('Disaster'),         --7
+('Drama'),            --8
+('Epic'),             --9
+('Fantasy'),          --10
+('Musical'),          --11
+('Mystery'),          --12
+('Romantic'),         --13
+('Thriller'),         --14
+('Science Fiction'),  --15
+('Space-Opera'),      --16
+('Spy'),              --17
+('Superhero');        --18
 
 
 -- starter movies and genres data
 INSERT INTO "movies_genres" ("movie_id", "genre_id")
 VALUES 
-(1,1), (1,3), (1,4),      -- Avatar
-(2,1), (2,11), (2,12),    -- Beauty
-(3,3),                    -- Cpt Marvel
-(4,4), (4,7),             -- Nemo
-(5,3),                    -- Gone Girl
-(6,12),                   -- Véronique
-(7,9),(7,2),              -- Bond
-(8,4),                    -- Pi
-(9,4),                    -- Monsters
-(10,4),                   -- Star Wars
-(11,6), (11,11),          -- Martian
-(12,8), (12,9),           -- Social Net
-(13,4), (13,10), (13,6),  -- Titanic
-(14,3), (14,2), (14,4);   -- Toy Story
+(1,1), (1,15), (1,2), (1,10),               -- Avatar
+(2,13), (2,10), (2,5), (2,11),              -- Beauty
+(3,1), (3,18), (3,15),                      -- Cpt Marvel
+(4,5), (4,6), (4,2), (4,3),                 -- Nemo
+(5,14), (5,12), (5,8),                      -- Gone Girl
+(6,8), (6,13), (6,10), (6,12),              -- Véronique
+(7,1),(7,2), (7,17), (7,14), (7,12),        -- Bond
+(8,2), (8,8),                               -- Pi
+(9,6), (9,2), (9,3), (9,10),                -- Monsters
+(10,1), (10,15), (10,2), (10,10), (10,16),  -- Star Wars
+(11,15), (11,2), (11,10), (11,8)            -- Martian
+(12,8),                                     -- Social Net
+(13,13), (13,7), (13,8),                    -- Titanic
+(14,5), (14,6), (14,2), (14,10), (14,3);   -- Toy Story

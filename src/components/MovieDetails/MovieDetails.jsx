@@ -1,8 +1,7 @@
-import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom/";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useParams, useHistory } from "react-router-dom/";
 import { useEffect } from "react";
-import { useHistory } from 'react-router-dom/';
+
 
 function MovieDetails() {
 
@@ -32,14 +31,14 @@ function MovieDetails() {
       <>
         {/* <button onClick={sendBackToMovieList}>Back to List</button> */}
         <h1>{movie.title}</h1>
-        <img src={movie.poster} alt={movie.title} />
-        <p>{movie.description}</p>
-        <h2>Associated Genres</h2>
         <ul>
           {movie.genres.map(genre => {
             return <li key={genre}>{genre}</li>
           })}
         </ul>
+        <img src={movie.poster} alt={movie.title} />
+        <p>{movie.description}</p>
+        <h2>Associated Genres</h2>
       </>
     )
   }
