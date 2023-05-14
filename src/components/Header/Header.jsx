@@ -1,10 +1,21 @@
 import './Header.css'
-import Button, { buttonClasses } from '@mui/base/Button';
+import { Link, useHistory } from "react-router-dom/";
+// material-ui Components
+import Button from '@mui/material/Button';
 import { styled } from '@mui/system';
-import { Link } from "react-router-dom/";
-import { useHistory } from 'react-router-dom/';
+// material-ui Icons
+import HomeIcon from '@mui/icons-material/Home';
 
 export default function Header() {
+
+  const StyledButton = styled(Button)(() => ({
+    backgroundColor: 'rgb(15, 133, 102)',
+    color: 'rgb(255,255,255)',
+
+    '&:hover': {
+      backgroundColor: 'rgb(119, 187, 85)',
+    }
+  }))
   
   const history = useHistory();
 
@@ -15,52 +26,14 @@ export default function Header() {
   return (
     <header>
       <h1>The Movies Saga!</h1>
-      <TriggerButton
+      <StyledButton
         type="button"
         onClick={sendHome}
+        variant='contained'
       ><Link to='/'>
-        Home
+        <HomeIcon fontSize='large'/>
       </Link>
-      </TriggerButton>
+      </StyledButton>
     </header>
   )
 }
-
-const grey = {
-  50: '#f6f8fa',
-  100: '#eaeef2',
-  200: '#d0d7de',
-  300: '#afb8c1',
-  400: '#8c959f',
-  500: '#6e7781',
-  600: '#57606a',
-  700: '#424a53',
-  800: '#32383f',
-  900: '#24292f',
-};
-
-const TriggerButton = styled(Button)(
-  ({ theme }) => `
-  font-family: IBM Plex Sans, sans-serif;
-  font-size: 0.875rem;
-  font-weight: 600;
-  box-sizing: border-box;
-  min-height: calc(1.5em + 22px);
-  border-radius: 12px;
-  margin-top: 1%;
-  padding: 8px 14px;
-  line-height: 1.5;
-  background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
-  border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
-  color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
-
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 120ms;
-
-  &:hover {
-    background: ${theme.palette.mode === 'dark' ? grey[800] : grey[200]};
-    border-color: ${theme.palette.mode === 'dark' ? grey[600] : grey[400]};
-  }
-  `,
-);
