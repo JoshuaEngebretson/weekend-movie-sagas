@@ -174,18 +174,18 @@ export default function DetailNavButtons({id, movieCount}) {
 
   return (
     <Box
-          sx={{
-            diplay: 'flex',
-            flexDirection: 'column',
-            alightItems: 'center',
-            '& > *': {
-              m: 1,
-            },
-          }}
-        >
-          <ButtonGroup size="small" aria-label='medium secondary button group'>
-            {buttons}
-          </ButtonGroup>
-        </Box>
+      sx={{
+        diplay: 'flex',
+        flexDirection: 'column',
+        alightItems: 'center',
+        '& > *': {
+          m: 1,
+        },
+      }}
+    >
+      <ButtonGroup size="small" aria-label='medium secondary button group'>
+        {buttons}
+      </ButtonGroup>
+    </Box>
   )
 }
