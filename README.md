@@ -6,7 +6,9 @@ I was taked with creating an application to view movie that are stored within a 
 
 
 ## Screen Shots
+### Home Page
 ![Screen shot of the starting page of the application. Shows 6 movie posters. "Beauty and the Beast", "Captain Marvel", "Finding Nemo", "Life of Pi", "Monsters, Inc.", and "Star Wars: The Last Jedi"](./public/images/Screenshots/home-page.png)
+### Details Page
 ![Screen shot of one of the movie details pages. The selected movie is "Captain Marvel", there is a brief synopsis of the movie with key cast and crew noted, also notes the Associated Genres for the film](./public/images/Screenshots/details-page.png)
 
 ## Prerequisites
@@ -52,7 +54,7 @@ Once the page is open, you should see a number of movie posters and their movie 
         - To do so, click on the arrow button pointing to the right `>` button
     - The last movie in the list
         - To do so, click on the farthest button to the right `>|`
-
+### Details Page - navigation bar
 ![Screen shot of the details page navigation bar. 4 buttons shown. The furthest left button is a filled in left facing triangle with a line stopping the arrow. The middle left button is an arrow that points to the left. The middle right is an arrow that points to the right. The furthest right button is a right facing filled in triangle with a line stopping the arrow.](./public/images/Screenshots/details-navigation.png)
 
 
