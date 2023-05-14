@@ -17,7 +17,6 @@ export default function DetailNavButtons({id, movieCount}) {
   const StyledButton = styled(Button)(() => ({
     backgroundColor: 'rgb(15, 133, 102)',
     color: 'rgb(255,255,255)',
-    // color: 'black',
     '&:hover': {
       backgroundColor: 'rgb(119, 187, 85)',
     }

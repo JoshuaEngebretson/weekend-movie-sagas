@@ -3,12 +3,10 @@ import './App.css';
 import MovieList from '../MovieList/MovieList'
 import MovieDetails from '../MovieDetails/MovieDetails';
 import Header from '../Header/Header';
-import { CssBaseline } from '@mui/material';
 
 function App() {
   return (
     <div className="App">
-      {/* <CssBaseline /> */}
       <Router>        
         <Header />
         <Route path="/" exact>
