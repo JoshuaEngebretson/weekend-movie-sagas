@@ -15,10 +15,11 @@ import SkipNextIcon from '@mui/icons-material/SkipNext';
 export default function DetailNavButtons({id, movieCount}) {
 
   const StyledButton = styled(Button)(() => ({
-    backgroundColor: 'rgb(187, 85, 119)',
-    color: 'black',
+    backgroundColor: 'rgb(15, 133, 102)',
+    color: 'rgb(255,255,255)',
+    // color: 'black',
     '&:hover': {
-      backgroundColor: 'black'
+      backgroundColor: 'rgb(119, 187, 85)',
     }
   }))
 
@@ -51,83 +52,83 @@ export default function DetailNavButtons({id, movieCount}) {
   if (Number(id) === 1) {
     buttons = [
       // We are on the first movie, time to disable the First Movie button
-      <Button
+      <StyledButton
         key='first'
         onClick={goToFirstMovie}
         variant='contained'
         disabled>
           <SkipPreviousIcon />
-      </Button>,
+      </StyledButton>,
       // No more Previous Movie, time to disable the button
-      <Button
+      <StyledButton
         key='back'
         onClick={previousMovie}
         variant='contained'
         disabled>
           <NavigateBeforeIcon />
-      </Button>,
-      <Button
+      </StyledButton>,
+      <StyledButton
         key='next'
         onClick={nextMovie}
         variant='contained'>
           <NavigateNextIcon />
-      </Button>,
-      <Button
+      </StyledButton>,
+      <StyledButton
         key='last'
         onClick={goToLastMovie}
         variant='contained'>
           <SkipNextIcon />
-      </Button>
+      </StyledButton>
     ]
   } else if (Number(id) > 1 && Number(id) < movieCount) {
     buttons = [
-      <Button
+      <StyledButton
         key='first'
         onClick={goToFirstMovie} 
         variant='contained'>
           <SkipPreviousIcon />
-      </Button>,
-      <Button
+      </StyledButton>,
+      <StyledButton
         key='back'
         onClick={previousMovie} 
         variant='contained'>
           <NavigateBeforeIcon />
-      </Button>,
-      <Button
+      </StyledButton>,
+      <StyledButton
         key='next'
         onClick={nextMovie} 
         variant='contained'>
           <NavigateNextIcon />
-      </Button>,
-      <Button
+      </StyledButton>,
+      <StyledButton
         key='last'
         onClick={goToLastMovie} 
         variant='contained'>
           <SkipNextIcon />
-      </Button>
+      </StyledButton>
     ]
   } else if (Number(id) === movieCount) {
     buttons = [
-      <Button
+      <StyledButton
         key='first'
         onClick={goToFirstMovie}
         variant='contained'>
           <SkipPreviousIcon />
-      </Button>,
-      <Button
+      </StyledButton>,
+      <StyledButton
         key='back'
         onClick={previousMovie}
         variant='contained'>
           <NavigateBeforeIcon />
-      </Button>,
+      </StyledButton>,
       // We are on the last movie, time to disable the Next Movie button
-      <Button
+      <StyledButton
         key='next'
         onClick={nextMovie}
         variant='contained'
         disabled>
           <NavigateNextIcon />
-      </Button>,
+      </StyledButton>,
       // We are on the last movie, time to disable the Last Movie button
       <StyledButton
         key='last'
@@ -140,35 +141,35 @@ export default function DetailNavButtons({id, movieCount}) {
   } else {
     buttons = [
       // We are outside of the number of movies, can send back to the first
-      <Button
+      <StyledButton
         key='first'
         onClick={goToFirstMovie}
         variant='contained'>
           <SkipPreviousIcon />
-      </Button>,
+      </StyledButton>,
       // We are outside of the number of movies, disable the Previous Movie button
-      <Button
+      <StyledButton
         key='back'
         onClick={previousMovie}
         disabled
         variant='contained'>
           <NavigateBeforeIcon />
-      </Button>,
+      </StyledButton>,
       // We are past the last movie, time to disable the Next Movie button
-      <Button
+      <StyledButton
         key='next'
         onClick={nextMovie}
         disabled
         variant='contained'>
           <NavigateNextIcon />
-      </Button>,
+      </StyledButton>,
       // We are past the last movie, can send back to it
-      <Button
+      <StyledButton
         key='last'
         onClick={goToLastMovie}
         variant='contained'>
           <SkipNextIcon />
-      </Button>
+      </StyledButton>
     ]
   }
 
