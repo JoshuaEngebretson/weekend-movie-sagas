@@ -1,4 +1,13 @@
 .movies {
-    display : flex;
-    flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
+	display: grid;
+	grid-auto-flow: dense;
+	gap: 1rem;
+	grid-template-columns: repeat(
+		auto-fit,
+		minmax(min(100%, 350px), 1fr)
+	);
+	container-type: inline-size;
+	grid-auto-rows: auto 320px;
 }

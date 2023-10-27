@@ -1,4 +1,25 @@
 .Button {
-  color: black;
-  background-color: black;
+	color: black;
+	background-color: black;
+}
+
+.movie-info {
+	padding-bottom: 1rem;
+}
+
+.movie-info h2,
+.movie-info h3 {
+	padding: 1%;
+}
+.movie-info img {
+	margin-bottom: 2%;
+}
+
+.movie-info p {
+	width: 80%;
+	margin: auto;
+}
+
+.genres li {
+	list-style-type: none;
 }
