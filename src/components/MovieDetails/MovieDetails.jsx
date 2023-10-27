@@ -11,8 +11,6 @@ function MovieDetails() {
 	const movieCount = useSelector(
 		(store) => store.allMoviesReducer.length
 	);
-	console.log("movie inside MovieDetails:", movie);
-	console.log(movieCount);
 
 	let { id } = useParams();
 
@@ -29,6 +27,7 @@ function MovieDetails() {
 	// confirm movie is defined, then render information
 	// This ensures that there are no to less errors on loading the page
 	if (movie != undefined) {
+		const altText = `Movie Poster for ${movie.title}`;
 		return (
 			<>
 				<DetailNavButtons id={id} movieCount={movieCount} />
@@ -43,7 +42,7 @@ function MovieDetails() {
 				>
 					<div className="movie-info">
 						<h2>{movie.title}</h2>
-						<img src={movie.poster} alt={movie.title} />
+						<img src={movie.poster} alt={altText} />
 						<h3>Movie Description</h3>
 						<p>{movie.description}</p>
 					</div>

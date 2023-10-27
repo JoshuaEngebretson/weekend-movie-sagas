@@ -5,11 +5,10 @@ function MovieItem({ movie }) {
 	const history = useHistory();
 
 	const sendToDetails = () => {
-		console.log(
-			`Clicked on ${movie.title}, will send to details`
-		);
 		history.push(`/details/${movie.id}`);
 	};
+
+	const altText = `Movie Poster for ${movie.title}`;
 
 	return (
 		<div
@@ -18,7 +17,7 @@ function MovieItem({ movie }) {
 			className="movie-card"
 		>
 			<h3>{movie.title}</h3>
-			<img src={movie.poster} alt={movie.title} />
+			<img src={movie.poster} alt={altText} />
 		</div>
 	);
 }
